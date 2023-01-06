@@ -1,4 +1,3 @@
-import returnHowManyArguments from './4-rest-parameter.js';
+import concatArrays from './5-spread-operator.js';
 
-console.log(returnHowManyArguments("one"));
-console.log(returnHowManyArguments("one", "two", 3, "4th"));
+console.log(concatArrays(['a', 'b'], ['c', 'd'], 'Hello'));

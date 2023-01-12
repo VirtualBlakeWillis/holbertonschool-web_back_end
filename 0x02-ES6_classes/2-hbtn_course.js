@@ -1,8 +1,9 @@
+/*eslint valid-typeof: ["error", { "requireStringLiterals": false }]*/
 export default class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = this.checkVal(name, 'string', 'Name');
-    this._length = this.checkVal(length, 1, 'Length');
-    this._students = this.checkVal(students, [[]], 'Students');
+    this._name = HolbertonCourse.checkVal(name, 'string', 'Name');
+    this._length = HolbertonCourse.checkVal(length, 'number', 'Length');
+    this._students = HolbertonCourse.checkVal(students, 'object', 'Students');
   }
 
   get name() {
@@ -18,19 +19,19 @@ export default class HolbertonCourse {
   }
 
   set name(name) {
-    this._name = this.checkVal(name, 'string', 'Name');
+    this._name = HolbertonCourse.checkVal(name, 'string', 'Name');
   }
 
   set length(length) {
-    this._length = this.checkVal(length, 1, 'Length');
+    this._length = HolbertonCourse.checkVal(length, 'number', 'Length');
   }
 
   set students(students) {
-    this._students = this.checkVal(students, [[]], 'Students');
+    this._students = HolbertonCourse.checkVal(students, 'object', 'Students');
   }
 
   static checkVal(val, type, variable) {
-    if (typeof (val) !== typeof (type)) {
+    if (typeof (val) !== type) {
       throw TypeError(`${variable} must be a ${type}`);
     }
     return val;

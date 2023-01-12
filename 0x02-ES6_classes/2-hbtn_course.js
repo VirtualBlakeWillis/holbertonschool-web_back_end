@@ -1,4 +1,4 @@
-/*eslint valid-typeof: ["error", { "requireStringLiterals": false }]*/
+/* eslint-disable valid-typeof */
 export default class HolbertonCourse {
   constructor(name, length, students) {
     this._name = HolbertonCourse.checkVal(name, 'string', 'Name');

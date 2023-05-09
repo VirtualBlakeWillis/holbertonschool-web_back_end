@@ -6,7 +6,7 @@ random delay between 0 and max_delay (included and float value) seconds and
 eventually returns it.
 Use the random module.
 """
-import asyncio
+import asyncio, random
 
 
 async def wait_random(max_delay: int = 10) -> float:

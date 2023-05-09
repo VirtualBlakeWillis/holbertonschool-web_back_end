@@ -22,7 +22,6 @@ def measure_time(n: int, max_delay: int = 10) -> float:
     Returns:
         float: Average time for each task to complete.
     """
-    print("measure_time: n = {} and max_delay = {}".format(n, max_delay))
     s = perf_counter()
     tasks = asyncio.run(wait_n(n, max_delay))
     print(tasks)

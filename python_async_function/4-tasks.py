@@ -6,7 +6,7 @@ called.
 """
 from typing import List
 import asyncio
-wait_random = __import__('0-basic_async_syntax').wait_random
+task_wait_random = __import__('3-tasks.py').task_wait_random
 
 
 async def wait_n(n: int, max_delay: int) -> List[float]:

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Create a class FIFOCache that inherits from BaseCaching and is a caching system:
+Create class FIFOCache that inherits from BaseCaching and is a caching system:
 You must use self.cache_data - dictionary from the parent class BaseCaching
 You can overload def __init__(self): but don’t forget to call the parent init:
 BaseCaching.__init__(self)
@@ -36,7 +36,7 @@ class FIFOCache(BaseCaching):
             print("DISCARD: {}".format(discard))
         self.queue.append(key)
         self.cache_data[key] = item
-    
+
     def get(self, key):
         """ get an item from cache """
         if key is None or key not in self.cache_data:

@@ -2,7 +2,7 @@
 
 
 
-![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2019/12/5c48d4f6d4dd8081eb48.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20230519%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20230519T211637Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=7d75ce504575c13e5a95db404fdd12f23cc45bb2e9daae8fe76dba3cd022c508)
+![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2019/12/5c48d4f6d4dd8081eb48.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20230524%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20230524T184902Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=714965ca40cc30fe2c9314a6b832a35545ac5449f7c242827eda370534f2b0c0)
 
 
 Resources
@@ -12,17 +12,17 @@ Resources
 **Read or watch:**
 
 
-* [What Is PII, non-PII, and Personal Data?](/rltoken/foPGuA-2Dz3K1Y40Zc_Qvg "What Is PII, non-PII, and Personal Data?")
-* [logging documentation](/rltoken/U2Y7GJNwzVPTTvmpsyZ4sg "logging documentation")
-* [bcrypt package](/rltoken/rvDYLUTaAWqtkhSQAJf4zA "bcrypt package")
-* [Logging to Files, Setting Levels, and Formatting](/rltoken/sxnkG_PQ8BcYeFGWAIRnjg "Logging to Files, Setting Levels, and Formatting")
+* [What Is PII, non-PII, and Personal Data?](https://piwik.pro/blog/what-is-pii-personal-data/ "What Is PII, non-PII, and Personal Data?")
+* [logging documentation](https://docs.python.org/3/library/logging.html "logging documentation")
+* [bcrypt package](https://github.com/pyca/bcrypt/ "bcrypt package")
+* [Logging to Files, Setting Levels, and Formatting](https://www.youtube.com/watch?v=-ARI4Cz-awo "Logging to Files, Setting Levels, and Formatting")
 
 
 Learning Objectives
 -------------------
 
 
-At the end of this project, you are expected to be able to [explain to anyone](/rltoken/ZPysAXKK27_KivWx2yY8FA "explain to anyone"), **without the help of Google**:
+At the end of this project, you are expected to be able to [explain to anyone](https://fs.blog/feynman-learning-technique/ "explain to anyone"), **without the help of Google**:
 
 
 * Examples of Personally Identifiable Information (PII)

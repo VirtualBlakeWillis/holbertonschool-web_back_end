@@ -16,6 +16,7 @@ import logging
 
 PII_FIELDS: Tuple = ('name', 'email', 'phone', 'ssn', 'password')
 
+
 class RedactingFormatter(logging.Formatter):
     """ Redacting Formatter class"""
 
@@ -43,8 +44,9 @@ def filter_datum(fields: List[str], redaction: str, message: str,
                          field + "=" + redaction + separator, message)
     return message
 
+
 def get_logger() -> logging.Logger:
-    """ Implement a get_logger function that takes no arguments and returns a logging.Logger object. """ # noqa
+    """ Implement a get_logger function that takes no arguments and returns a logging.Logger object. """  # noqa
     logger = logging.getLogger("user_data")
     logger.setLevel(logging.INFO)
     logger.propagate = False

@@ -10,7 +10,7 @@ The function should use a regex to replace occurrences of certain field values.
 filter_datum should be less than 5 lines long and use re.sub to perform the substitution with a single regex. # noqa
 """
 import re
-from typing import List, Tuple
+from typing import List, Tuple, MySQLConnection
 import logging
 
 
@@ -57,7 +57,7 @@ def get_logger() -> logging.Logger:
     return logger
 
 
-def get_db() -> mysql.connector.connection.MySQLConnection:
+def get_db() -> MySQLConnection:
     """ Implement a get_db function that returns a connector to the database (mysql.connector.connection.MySQLConnection object) """  # noqa
     return mysql.connector.connect(
         user=os.getenv('PERSONAL_DATA_DB_USERNAME', 'root'),

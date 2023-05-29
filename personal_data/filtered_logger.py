@@ -80,3 +80,10 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
         database=db_name
     )
     return db
+
+
+def main():
+    get_db()
+
+if __name__ == '__main__':
+    main()

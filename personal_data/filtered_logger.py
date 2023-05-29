@@ -60,15 +60,23 @@ def get_logger() -> logging.Logger:
 
 
 def get_db() -> mysql.connector.connection.MySQLConnection:
-    """ Implement a get_db function that returns a connector to the database (mysql.connector.connection.MySQLConnection object) """  # noqa
+    """
+    Connect to the MySQL database using the credentials from environment
+    variables.
 
-    user= os.getenv('PERSONAL_DATA_DB_USERNAME', 'root'),
-    password= os.getenv('PERSONAL_DATA_DB_PASSWORD', ''),
-    host= os.getenv('PERSONAL_DATA_DB_HOST', 'localhost'),
-    database= os.getenv('PERSONAL_DATA_DB_NAME')
+    Returns:
+        mysql.connector.connection.MySQLConnection: The connection to the
+        MySQL database.
 
-    return mysql.connector.connect(
-        user=user,
+    """
+    username = os.environ.get("PERSONAL_DATA_DB_USERNAME", "root")
+    password = os.environ.get("PERSONAL_DATA_DB_PASSWORD", "")
+    host = os.environ.get("PERSONAL_DATA_DB_HOST", "localhost")
+    db_name = os.environ.get("PERSONAL_DATA_DB_NAME")
+    db = mysql.connector.connect(
+        user=username,
         password=password,
         host=host,
-        database=database)
+        database=db_name
+    )
+    return db

@@ -12,7 +12,7 @@ filter_datum should be less than 5 lines long and use re.sub to perform the subs
 import re
 from typing import List, Tuple
 import logging
-import mysql
+import mysql.connector
 
 
 PII_FIELDS: Tuple = ('name', 'email', 'phone', 'ssn', 'password')

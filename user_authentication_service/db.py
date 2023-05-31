@@ -30,6 +30,7 @@ class DB:
             self.__session = DBSession()
         return self.__session
 
+    @property
     def add_user(self, email: str, hashed_password: str) -> None:
         """Method that saves a new user to the database
         """

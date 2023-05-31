@@ -96,5 +96,6 @@ def get_reset_password_token() -> str:
     except ValueError:
         abort(403)
 
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="5000")

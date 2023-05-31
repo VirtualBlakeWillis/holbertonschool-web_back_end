@@ -7,4 +7,5 @@ import uuid
 
 
 class SessionAuth(Auth):
+    """ SessionAuth class """
     pass

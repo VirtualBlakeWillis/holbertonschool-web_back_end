@@ -5,7 +5,6 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.exc import InvalidRequestError
 from sqlalchemy.orm import sessionmaker
-from db import DB
 
 
 Base = declarative_base()

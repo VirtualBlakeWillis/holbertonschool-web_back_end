@@ -44,7 +44,7 @@ class DB:
         """
         if not kwargs:
             raise InvalidRequestError
-        row = self._session.query(User).filter_by(**kwargs).first()
+        row = self._session.query(user.User).filter_by(**kwargs).first()
         if not row:
             raise NoResultFound
         return row

@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """ Module for Session Authentication views """
 from api.v1.views import app_views
-from flask import abort, jsonify, request
+from flask import abort, jsonify
 from models.user import User
 from os import getenv
-from api.v1.app import auth
 
 
 
@@ -19,16 +18,16 @@ def login() -> str:
     if not password or password == '':
         return jsonify({"error": "password missing"}), 400
 
-    user = User.search(email)
+    user_list = User.search({'email': email})
 
-    if not user:
+    if user_list is []:
         return jsonify({"error": "no user found for this email"}), 404
 
-    if not user.is_valid_password(password):
+    if not user_list[0].is_valid_password(password):
         return jsonify({"error": "wrong password"}), 401
 
+    from api.v1.app import auth
     res = jsonify(user.to_json())
-
     session_id = auth.create_session(user.id)
     cookie_name = getenv('SESSION_NAME')
     res.set_cookie(cookie_name, session_id)

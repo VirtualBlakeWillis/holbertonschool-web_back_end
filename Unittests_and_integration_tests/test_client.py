@@ -11,7 +11,6 @@ from fixtures import TEST_PAYLOAD
 class TestGithubOrgClient(unittest.TestCase):
     """ testing class """
 
-
     @parameterized.expand([
         ("google"),
         ("abc"),

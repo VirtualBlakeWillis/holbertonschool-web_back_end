@@ -2,6 +2,7 @@
 """ Unittests and Integration tests for the utils.py file.
 """
 import unittest
+from unittest.mock import patch
 from parameterized import parameterized
 from utils import access_nested_map, get_json
 
@@ -35,7 +36,7 @@ class TestGetJson(unittest.TestCase):
         ("http://example.com", True),
         ("http://holberton.io", False)
     ])
-    @unittest.mock.patch('requests.get')
+    @patch('requests.get')
     def test_get_json(self, test_url, test_payload, mock_get):
         """ tests get_json """
         self.assertEqual(get_json(test_url), mock_get.return_value.json.return_value)

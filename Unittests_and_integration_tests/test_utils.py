@@ -40,13 +40,14 @@ class TestGetJson(unittest.TestCase):
     def test_get_json(self, test_url, test_payload, mock_get):
         """ tests get_json """
         mock_get.return_value.json.return_value = test_payload
-        self.assertEqual(get_json(test_url), mock_get.return_value.json.return_value)
+        self.assertEqual(get_json(test_url), mock_get.return_value.json.return_value) # noqa
 
 
 class TestMemoize(unittest.TestCase):
     """ task 3 """
 
     def test_memoize(self):
+        """ tests memoize property """
 
         class TestClass:
             """ test class """
@@ -58,7 +59,7 @@ class TestMemoize(unittest.TestCase):
             def a_property(self):
                 return self.a_method()
 
-        with patch.object(TestClass, 'a_method', return_value=42) as mock_method:
+        with patch.object(TestClass, 'a_method', return_value=42) as mock_method: # noqa
             test = TestClass()
             test.a_property
             test.a_property

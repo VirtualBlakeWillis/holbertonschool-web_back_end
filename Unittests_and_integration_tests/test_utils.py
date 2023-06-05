@@ -43,7 +43,7 @@ class TestGetJson(unittest.TestCase):
         self.assertEqual(get_json(test_url), mock_get.return_value.json.return_value)
 
 
-TestMemoize(unittest.TestCase):
+class TestMemoize(unittest.TestCase):
     """ task 3 """
 
     def test_memoize(self):

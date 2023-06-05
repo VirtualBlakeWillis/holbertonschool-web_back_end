@@ -22,3 +22,12 @@ class TestGithubOrgClient(unittest.TestCase):
         test_class = GithubOrgClient(org_name)
         self.assertEqual(test_class.org, mock_get.return_value)
         mock_get.assert_called_once()
+
+    def test_public_repos_url(self):
+        """ test public repos url """
+        with patch('client.GithubOrgClient.org',
+                   new_callable=PropertyMock) as mock_org:
+            mock_org.return_value = {"repos_url": "twitter.com"}
+            test_class = GithubOrgClient("twitter")
+            self.assertEqual(test_class._public_repos_url, "twitter.com")
+            mock_org.assert_called_once()

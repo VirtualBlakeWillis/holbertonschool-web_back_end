@@ -23,6 +23,7 @@ class TestGithubOrgClient(unittest.TestCase):
         self.assertEqual(test_class.org, mock_get.return_value)
         mock_get.assert_called_once()
 
+    @patch('client.get_json')
     def test_public_repos_url(self):
         """ test public repos url """
         with patch('client.GithubOrgClient.org',

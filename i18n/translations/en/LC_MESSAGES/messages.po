@@ -3,10 +3,18 @@
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
+
+#Task 4
 msgid "home_title"
 msgstr "Welcome to Holberton"
 msgid "home_header"
 msgstr "Hello world!"
+
+# Task 5
+msgid "logged_in_as"
+msgstr "You are logged in as %(username)s."
+msgid "not_logged_in"
+msgstr "You are not logged in."
 
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"

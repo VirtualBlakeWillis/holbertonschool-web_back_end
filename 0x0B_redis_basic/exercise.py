@@ -6,6 +6,14 @@ from typing import Union, Callable, Optional
 from functools import wraps
 
 
+    def get_str(self, key: str) -> str :
+        """ Method that takes a key string argument and returns a string """
+        return val.decode('utf-8')
+
+    def get_int(self, val: str) -> int :
+        """ Method that takes a key string argument and returns an int """
+        return int(val)
+
 class Cache() :
     """ Cache class """
 
@@ -26,3 +34,4 @@ class Cache() :
             return fn(self._redis.get(key))
         else :
             return self._redis.get(key)
+

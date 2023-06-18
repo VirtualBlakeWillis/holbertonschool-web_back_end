@@ -14,6 +14,7 @@ def get_int(self, val: str) -> int :
     """ Method that takes a key string argument and returns an int"""
     return int(val)
 
+
 def count_calls(method: Callable) -> Callable:
     """ Decorator that takes a single method Callable argument and returns a Callable """  # noqa
     key = method.__qualname__
@@ -65,3 +66,18 @@ class Cache() :
         else :
             return self._redis.get(key)
 
+
+    def replay(self) -> None :
+        """ Method that displays the history of calls of a particular function """
+        keys = self._redis.keys("*")
+        for key in keys:
+            if key.decode('utf-8').endswith(":outputs"):
+                name = key.decode('utf-8').split(':')[0]
+                inputs = self._redis.lrange("{}:inputs".format(name), 0, -1)
+                outputs = self._redis.lrange("{}:outputs".format(name), 0, -1)
+                print("{} was called {} times:".format(name,
+                                                       len(inputs.decode('utf-8'))))
+                for i, o in zip(inputs, outputs):
+                    print("{}(*{}) -> {}".format(name,
+                                                 i.decode('utf-8'),
+                                                 o.decode('utf-8')))

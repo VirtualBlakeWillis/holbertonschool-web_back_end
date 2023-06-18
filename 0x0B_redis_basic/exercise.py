@@ -14,6 +14,20 @@ def get_int(self, val: str) -> int :
     """ Method that takes a key string argument and returns an int"""
     return int(val)
 
+def count_calls(method: Callable) -> Callable :
+    """ Decorator that takes a single method Callable argument and returns a Callable """  # noqa
+    key = method.__qualname__
+
+    @wraps(method)
+    def wrapper(self, *args, **kwds) :
+        """ Wrapper function """
+        self._redis.incr(key)
+        return method(self, *args, **kwds)
+
+    return wrapper
+
+
+
 class Cache() :
     """ Cache class """
 
@@ -22,6 +36,7 @@ class Cache() :
         self._redis = redis.Redis()
         self._redis.flushdb()
 
+    @count_calls
     def store(self, data: Union[str, bytes, int, float]) -> str :
         """ Method that takes a data argument and returns a string """
         key = str(uuid.uuid4())

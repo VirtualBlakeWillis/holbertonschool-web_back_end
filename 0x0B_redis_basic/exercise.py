@@ -62,9 +62,9 @@ class Cache():
 
     def get(self, key: str, fn: Optional[Callable] = None) -> Union[str, bytes, int, float]:  # noqa
         """ Method that takes a key string argument and an optional Callable argument """  # noqa
-        if fn :
+        if fn:
             return fn(self._redis.get(key))
-        else :
+        else:
             return self._redis.get(key)
 
 
@@ -80,17 +80,3 @@ def replay(func: Callable) -> None:
         print("{}(*{}) -> {}".format(key,
                                      i.decode('utf-8'),
                                      o.decode('utf-8')))
-
-
-    # keys = self._redis.keys("*")
-    # for key in keys:
-    #     if key.decode('utf-8').endswith(":outputs"):
-    #         name = key.decode('utf-8').split(':')[0]
-    #         inputs = self._redis.lrange("{}:inputs".format(name), 0, -1)
-    #         outputs = self._redis.lrange("{}:outputs".format(name), 0, -1)
-    #         print("{} was called {} times:".format(name,
-    #                                                len(inputs.decode('utf-8'))))  # noqa
-    #         for i, o in zip(inputs, outputs):
-    #             print("{}(*{}) -> {}".format(name,
-    #                                          i.decode('utf-8'),
-    #                                          o.decode('utf-8')))

@@ -6,11 +6,12 @@ from typing import Union, Callable, Optional
 from functools import wraps
 
 
-def get_str(self, key: str) -> str :
+def get_str(self, key: str) -> str:
     """ Method that takes a key string argument and returns a string"""
     return val.decode('utf-8')
 
-def get_int(self, val: str) -> int :
+
+def get_int(self, val: str) -> int:
     """ Method that takes a key string argument and returns an int"""
     return int(val)
 
@@ -27,6 +28,7 @@ def count_calls(method: Callable) -> Callable:
 
     return wrapper
 
+
 def call_history(method: Callable) -> Callable:
     """ Decorator to store the history of inputs and outputs for a particular function """  # noqa
     key = method.__qualname__
@@ -42,24 +44,23 @@ def call_history(method: Callable) -> Callable:
     return wrapper
 
 
-
-class Cache() :
+class Cache():
     """ Cache class """
 
-    def __init__(self) :
+    def __init__(self):
         """ Constructor """
         self._redis = redis.Redis()
         self._redis.flushdb()
 
     @call_history
     @count_calls
-    def store(self, data: Union[str, bytes, int, float]) -> str :
+    def store(self, data: Union[str, bytes, int, float]) -> str:
         """ Method that takes a data argument and returns a string """
         key = str(uuid.uuid4())
         self._redis.set(key, data)
         return key
 
-    def get(self, key: str, fn: Optional[Callable] = None) -> Union[str, bytes, int, float] :  # noqa
+    def get(self, key: str, fn: Optional[Callable] = None) -> Union[str, bytes, int, float]:  # noqa
         """ Method that takes a key string argument and an optional Callable argument """  # noqa
         if fn :
             return fn(self._redis.get(key))
@@ -67,17 +68,29 @@ class Cache() :
             return self._redis.get(key)
 
 
-def replay(self) -> None :
+def replay(func: Callable) -> None:
     """ Method that displays the history of calls of a particular function """
-    keys = self._redis.keys("*")
-    for key in keys:
-        if key.decode('utf-8').endswith(":outputs"):
-            name = key.decode('utf-8').split(':')[0]
-            inputs = self._redis.lrange("{}:inputs".format(name), 0, -1)
-            outputs = self._redis.lrange("{}:outputs".format(name), 0, -1)
-            print("{} was called {} times:".format(name,
-                                                   len(inputs.decode('utf-8'))))  # noqa
-            for i, o in zip(inputs, outputs):
-                print("{}(*{}) -> {}".format(name,
-                                             i.decode('utf-8'),
-                                             o.decode('utf-8')))
+    key = func.__qualname__
+    redis = redis.Redis()
+    inputs = redis.lrange("{}:inputs".format(key), 0, -1)
+    outputs = redis.lrange("{}:outputs".format(key), 0, -1)
+    print("{} was called {} times:".format(key,
+                                             len(inputs.decode('utf-8'))))  # noqa
+    for i, o in zip(inputs, outputs):
+        print("{}(*{}) -> {}".format(key,
+                                     i.decode('utf-8'),
+                                     o.decode('utf-8')))
+
+
+    # keys = self._redis.keys("*")
+    # for key in keys:
+    #     if key.decode('utf-8').endswith(":outputs"):
+    #         name = key.decode('utf-8').split(':')[0]
+    #         inputs = self._redis.lrange("{}:inputs".format(name), 0, -1)
+    #         outputs = self._redis.lrange("{}:outputs".format(name), 0, -1)
+    #         print("{} was called {} times:".format(name,
+    #                                                len(inputs.decode('utf-8'))))  # noqa
+    #         for i, o in zip(inputs, outputs):
+    #             print("{}(*{}) -> {}".format(name,
+    #                                          i.decode('utf-8'),
+    #                                          o.decode('utf-8')))

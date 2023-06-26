@@ -1,4 +1,5 @@
 // insert document into collection 'school'
-db.school.insertOne({
+DB_NAME = "$1"
+mongo "$DB_NAME" --eval "db.school.insertOne({
     "name": "Holberton school”
-})
+})"

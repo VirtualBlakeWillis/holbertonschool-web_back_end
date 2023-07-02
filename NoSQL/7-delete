@@ -1,5 +1,4 @@
 // delete documents matching query in school
-db.school.delete(
-    {name: "Holberton school"},
-    {multi: true}
+db.school.deleteMany(
+    {name: "Holberton school"}
 )

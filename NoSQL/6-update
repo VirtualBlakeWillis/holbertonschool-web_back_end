@@ -1,0 +1,4 @@
+// adds a new attribute to a document in the collection school
+const query = { name: 'Holberton school' };
+const update = { address: “972 Mission street” };
+db.school.updateOne(query, update)

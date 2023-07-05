@@ -7,7 +7,6 @@ const port = 1245;
 const host = '127.0.0.1';
 
 const app = http.createServer((req, res) => {
-
   if (req.url === '/') {
     res.write('Hello Holberton School!');
     res.end();

@@ -2,7 +2,6 @@
 const fs = require('fs');
 
 function countStudents(path) {
-
   fs.readFile(path, 'utf8', (err, data) => {
     // error if not avalible
     if (err) throw new Error('Cannot load the database');
@@ -20,12 +19,15 @@ function countStudents(path) {
     rows.forEach((row) => {
       const field = row.split(',')[fieldIndex];
       const firstName = row.split(',')[firstNameIndex];
-      if (!fields[field]) fields[field] = {
+      if (!fields[field]) 
+      {
+        fields[field] = {
         count: 0,
         students: [],
       };
       fields[field].count += 1;
       fields[field].students.push(firstName);
+    }
     });
   
     for (const field in fields) {

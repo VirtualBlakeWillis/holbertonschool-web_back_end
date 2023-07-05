@@ -21,14 +21,14 @@ function countStudents(path) {
       const firstName = row.split(',')[firstNameIndex];
       if (!fields[field]) {
         fields[field] = {
-        count: 0,
-        students: [],
-      };
+          count: 0,
+          students: [],
+        };
     }
       fields[field].count += 1;
       fields[field].students.push(firstName);
     });
-  
+
     for (const field in fields) {
       if (field) {
         const n = fields[field].count;

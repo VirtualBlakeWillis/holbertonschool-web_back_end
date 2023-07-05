@@ -23,8 +23,8 @@ function countStudents(path) {
         fields[field] = {
           count: 0,
           students: [],
-          };
-    }
+        };
+      }
       fields[field].count += 1;
       fields[field].students.push(firstName);
     });

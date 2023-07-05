@@ -1,6 +1,7 @@
-function countStudents(path) {
+// countStudent module
+const fs = require('fs');
 
-  const fs = require('fs');
+function countStudents(path) {
 
   fs.readFile(path, 'utf8', (err, data) => {
     // error if not avalible
@@ -25,8 +26,8 @@ function countStudents(path) {
       };
       fields[field].count += 1;
       fields[field].students.push(firstName);
-    }
-    );
+    });
+  
     for (const field in fields) {
       if (field) {
         const n = fields[field].count;
@@ -34,7 +35,6 @@ function countStudents(path) {
         console.log(`Number of students in ${field}: ${n}. List: ${names}`);
       }
     }
-
   });
 }
 

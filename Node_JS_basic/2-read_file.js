@@ -14,7 +14,7 @@ function countStudents(path) {
     console.log(`Number of students: ${rows.length}`);
 
     // log the number of students in each field, with the following format:
-    // Number of students in <field>: <number>. List: <firstname1>, <firstname2>, ...
+    // Number of students in <field>: <number>. List: <firstname1>, ...
     const fields = {};
     rows.forEach((row) => {
       const field = row.split(',')[fieldIndex];

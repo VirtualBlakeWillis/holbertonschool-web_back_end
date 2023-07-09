@@ -1,7 +1,7 @@
 // testing calculateNumber function using chai
 
 const expect = require('chai').expect;
-const calculateNumber = require('./2-calcul.js');
+const calculateNumber = require('./2-calcul_chai.js');
 
 
 expect(calculateNumber('SUM', 1, 3.7)).to.equal(5);

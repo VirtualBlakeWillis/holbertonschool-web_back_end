@@ -2,7 +2,7 @@
 
 
 
-![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2020/1/91e1c50322b2428428f9.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20230607%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20230607T175849Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=86294666197536c273e96f7832198bddfaf93ee93f352aa9b6cf003d96cdbf10)
+![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2020/1/91e1c50322b2428428f9.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20230608%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20230608T164626Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=be1da1a8c58f58926bb06513dc77b053cfa9425a79fe04766e63df4dba41eb7e)
 
 
 Resources
@@ -13,8 +13,8 @@ Resources
 
 
 * [Flask-Babel](/rltoken/-a--VF9eFqe4WmUDbBRRLw "Flask-Babel")
-* [Flask i18n tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xiii-i18n-and-l10n "Flask i18n tutorial")
-* [pytz](https://pytz.sourceforge.net/ "pytz")
+* [Flask i18n tutorial](/rltoken/5ZXAPeW50RkAGQAEjkToug "Flask i18n tutorial")
+* [pytz](/rltoken/HAaY3AkcfGd-T6PCgEXocw "pytz")
 
 
 Learning Objectives

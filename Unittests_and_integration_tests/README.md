@@ -2,7 +2,7 @@
 
 
 
-![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2020/1/f088970b450e82c881ea.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20230605%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20230605T155852Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=9024ae4e9dad5d85f096a46527182a902c72664259975839e34ecc3668a397f1)
+![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2020/1/f088970b450e82c881ea.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20230608%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20230608T163136Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=90e437c07ab38e39f57b3637e7ecc9af1095c811bcaaa6345ff8300a2aa378a2)
 
 
 Unit testing is the process of testing that a particular function returns expected results
@@ -34,18 +34,18 @@ Resources
 **Read or watch:**
 
 
-* [unittest — Unit testing framework](https://docs.python.org/3/library/unittest.html "unittest — Unit testing framework")
-* [unittest.mock — mock object library](https://docs.python.org/3/library/unittest.mock.html "unittest.mock — mock object library")
-* [How to mock a readonly property with mock?](https://stackoverflow.com/questions/11836436/how-to-mock-a-readonly-property-with-mock "How to mock a readonly property with mock?")
-* [parameterized](https://pypi.org/project/parameterized/ "parameterized")
-* [Memoization](https://en.wikipedia.org/wiki/Memoization "Memoization")
+* [unittest — Unit testing framework](/rltoken/ug8beURP6GPP7yJtQ4I1Jw "unittest — Unit testing framework")
+* [unittest.mock — mock object library](/rltoken/cCjj8L1q_NaYxvFfqFfYPA "unittest.mock — mock object library")
+* [How to mock a readonly property with mock?](/rltoken/y8OnTBcqkL_Rmr2I3peRSQ "How to mock a readonly property with mock?")
+* [parameterized](/rltoken/Z6XhDNPKVcd7BW6163H0_Q "parameterized")
+* [Memoization](/rltoken/7xU6wdKJpB8L2S8vtkxpjw "Memoization")
 
 
 Learning Objectives
 -------------------
 
 
-At the end of this project, you are expected to be able to [explain to anyone](https://fs.blog/feynman-learning-technique/ "explain to anyone"), **without the help of Google**:
+At the end of this project, you are expected to be able to [explain to anyone](/rltoken/AiD51mZh2lZ8stCrg3CjGQ "explain to anyone"), **without the help of Google**:
 
 
 * The difference between unit and integration tests.

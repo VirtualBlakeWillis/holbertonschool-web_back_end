@@ -1,5 +1,6 @@
 const fs = require('fs');
 const util = require('util');
+
 const readFile = util.promisify(fs.readFile);
 
 function readDatabase(path) {
@@ -17,9 +18,9 @@ function readDatabase(path) {
     }
     return students;
   })
-  .catch((err) => {
-    throw new Error('Cannot load the database');
-  });
+    .catch(() => {
+      throw new Error('Cannot load the database');
+    });
 }
 
 module.exports = readDatabase;

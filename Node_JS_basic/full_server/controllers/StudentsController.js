@@ -8,12 +8,6 @@ class StudentsController {
       .then((data) => {
         for (const field in data) {
           if (field) {
-            total += data[field].length;
-          }
-        }
-        result += `Number of students: ${total}\n`;
-        for (const field in data) {
-          if (field) {
             result += `Number of students in ${field}: ${data[field].length}. List: ${data[field].join(', ')}\n`;
           }
         }
@@ -35,6 +29,9 @@ class StudentsController {
       .then((data) => {
         const students = data[major];
         response.status(200).send(`List: ${students.join(', ')}`);
+      })
+      .catch(() => {
+        response.status(500).send("Cannot load the database");
       });
     }
   }

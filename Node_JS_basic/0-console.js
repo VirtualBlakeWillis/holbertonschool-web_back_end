@@ -3,4 +3,4 @@ function displayMessage() {
 }
 
 
-module.exports = displayMessage;
+module.exports = { displayMessage };

@@ -3,7 +3,6 @@ const readDatabase = require('../utils');
 class StudentsController {
   static getAllStudents(request, response) {
     let result = 'This is the list of our students\n';
-    let total = 0;
     readDatabase(process.argv[2])
       .then((data) => {
         for (const field in data) {
@@ -26,14 +25,14 @@ class StudentsController {
       response.status(500).send('Major parameter must be CS or SWE');
     } else {
       readDatabase(process.argv[2])
-      .then((data) => {
-        const students = data[major];
-        response.status(200).send(`List: ${students.join(', ')}`);
-      })
-      .catch(() => {
-        response.status(500).send("Cannot load the database");
-      });
-    }
+        .then((data) => {
+          const students = data[major];
+          response.status(200).send(`List: ${students.join(', ')}`);
+        })
+        .catch(() => {
+          response.status(500).send('Cannot load the database');
+        });
+      }
   }
 }
 

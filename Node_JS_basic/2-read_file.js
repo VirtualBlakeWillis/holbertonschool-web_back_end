@@ -5,7 +5,7 @@ function countStudents(path) {
     data = fs.readFileSync(path, 'utf8');
 
     lines = data.split('\n');
-    lines = lines.slice(1, lines.length - 1);
+    lines = lines.slice(1, lines.length);
     console.log(`Number of students: ${lines.length}`);
     let students = {};
     for (const line of lines) {

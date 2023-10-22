@@ -32,7 +32,7 @@ class StudentsController {
         .catch(() => {
           response.status(500).send('Cannot load the database');
         });
-      }
+    }
   }
 }
 

@@ -2,12 +2,12 @@ const fs = require('fs');
 
 function countStudents(path) {
   try {
-    data = fs.readFileSync(path, 'utf8');
+    const data = fs.readFileSync(path, 'utf8');
 
-    lines = data.split('\n');
+    let lines = data.split('\n');
     lines = lines.slice(1, lines.length);
     console.log(`Number of students: ${lines.length}`);
-    let students = {};
+    const students = {};
     for (const line of lines) {
       const student = line.split(',');
       if (!students[student[3]]) {

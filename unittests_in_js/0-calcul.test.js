@@ -1,4 +1,4 @@
-var assert = require('chai').assert;
+var assert = require('assert');
 var calculateNumber = require('./0-calcul.js');
 
 describe('calculateNumber', function() {

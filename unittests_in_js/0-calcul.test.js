@@ -17,6 +17,9 @@ describe('calculateNumber', function() {
   it('should return 5', function() {
     assert.equal(calculateNumber(1, 3.7), 5);
   });
+  it('should return 4', function() {
+    assert.equal(calculateNumber(1, 3.2), 4);
+  });
 });
 
 

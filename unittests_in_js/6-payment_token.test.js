@@ -6,10 +6,13 @@ const getPaymentTokenFromAPI = require('./6-payment_token');
 
 describe('sendPaymentRequestToApi', function() {
     it('learning async testing', function(done) {
-        const spy = sinon.spy(console, 'log');
-        console.log(getPaymentTokenFromAPI(true).data);
-        done();
-        expect(spy.calledOnceWithExactly('Successful response from the API')).to.be.true;
-    });
-    
+        const apiRequest = getPaymentTokenFromAPI(true);
+        expect(apiRequest).to.be.a('promise');
+        apiRequest.then((res) => {
+            expect(res).to.equal('Successful response from the API');
+            done();
+        }).catch((err) => {
+            done(err);
+        });
+    });    
 });
